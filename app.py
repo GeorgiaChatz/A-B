@@ -25,7 +25,7 @@ def inject_css():
     st.markdown(
         """
         <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@400;500;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=GFS+Didot&family=Noto+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif:ital,wght@0,400;0,500;1,400&display=swap');
 
         :root{
             --paper:#fff9f2;
@@ -38,7 +38,7 @@ def inject_css():
         }
 
         html, body, [class*="css"]{
-            font-family:"Montserrat", Arial, sans-serif;
+            font-family:"Noto Sans", Arial, sans-serif;
         }
 
         .stApp{
@@ -75,7 +75,7 @@ def inject_css():
             align-items:center;
             justify-content:center;
             gap:.55rem;
-            font-family:"Montserrat",Arial,sans-serif !important;
+            font-family:"Noto Sans",Arial,sans-serif !important;
             font-size:.70rem !important;
             letter-spacing:.30em !important;
             color:var(--accent) !important;
@@ -95,11 +95,11 @@ def inject_css():
         }
 
         .av-names{
-            font-family:"Cormorant Garamond","Baskerville","Times New Roman",serif !important;
-            font-size:clamp(2.55rem,7.2vw,4.45rem) !important;
+            font-family:"GFS Didot","Noto Serif","Times New Roman",serif !important;
+            font-size:clamp(2.4rem,6.8vw,4.1rem) !important;
             line-height:.98 !important;
             font-weight:500 !important;
-            letter-spacing:-.03em !important;
+            letter-spacing:-.015em !important;
             text-align:center !important;
             color:var(--ink) !important;
             margin:0 auto !important;
@@ -118,7 +118,7 @@ def inject_css():
             text-align:center;
             margin-top:.72rem;
             color:var(--accent);
-            font-family:"Cormorant Garamond","Baskerville","Times New Roman",serif !important;
+            font-family:"Noto Serif","Times New Roman",serif !important;
             font-style:italic;
             font-size:1.15rem;
             letter-spacing:.03em;
@@ -161,7 +161,7 @@ def inject_css():
             border:1px solid var(--accent);
             background:var(--accent);
             color:#fff;
-            font-family:"Montserrat",Arial,sans-serif !important;
+            font-family:"Noto Sans",Arial,sans-serif !important;
             font-size:.82rem;
             font-weight:600;
             letter-spacing:.13em;
@@ -181,7 +181,7 @@ def inject_css():
             border:1px solid var(--accent) !important;
             background:transparent !important;
             color:var(--accent) !important;
-            font-family:"Montserrat",Arial,sans-serif !important;
+            font-family:"Noto Sans",Arial,sans-serif !important;
             font-size:.80rem !important;
             font-weight:600 !important;
             letter-spacing:.10em !important;
@@ -199,7 +199,7 @@ def inject_css():
 
         .av-large-title{
             text-align:center;
-            font-family:"Cormorant Garamond","Baskerville","Times New Roman",serif !important;
+            font-family:"GFS Didot","Noto Serif","Times New Roman",serif !important;
             font-size:1.55rem !important;
             font-style:italic;
             color:var(--ink);
@@ -233,7 +233,7 @@ def inject_css():
         }
 
         .av-thanks-title{
-            font-family:"Cormorant Garamond","Baskerville","Times New Roman",serif !important;
+            font-family:"GFS Didot","Noto Serif","Times New Roman",serif !important;
             font-size:2.25rem !important;
             font-weight:500 !important;
             color:var(--accent);
@@ -243,7 +243,7 @@ def inject_css():
         @media(max-width:640px){
             .block-container{padding:1rem .9rem 2.5rem;}
             .av-names{
-                font-size:clamp(2.3rem,10.7vw,3.65rem) !important;
+                font-size:clamp(2.15rem,10vw,3.4rem) !important;
                 line-height:.98 !important;
             }
             .av-amp{
