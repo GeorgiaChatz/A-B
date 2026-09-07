@@ -15,7 +15,7 @@ CHUNK_SIZE = 8 * 1024 * 1024
 LARGE_FILE_WARNING_MB = 700
 
 st.set_page_config(
-    page_title="Αλέξης & Βασιλίνα — Wedding Memories",
+    page_title="Αλέξης & Βασιλίνα",
     page_icon="🧡",
     layout="centered",
     initial_sidebar_state="collapsed",
@@ -28,13 +28,13 @@ def inject_css():
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@400;500;600&display=swap');
 
         :root{
-            --paper:#fbf6ef;
+            --paper:#fff9f2;
             --paper2:#fffdf9;
-            --ink:#2b2622;
-            --muted:#8f7563;
-            --accent:#b9653a;
-            --accent-soft:#ead5c6;
-            --line:rgba(43,38,34,.15);
+            --ink:#2b2521;
+            --muted:#9a7967;
+            --accent:#c86d3f;
+            --accent2:#f0c3a8;
+            --line:rgba(43,37,33,.14);
         }
 
         html, body, [class*="css"]{
@@ -43,8 +43,8 @@ def inject_css():
 
         .stApp{
             background:
-              radial-gradient(circle at 12% 8%, rgba(255,255,255,.95), transparent 28rem),
-              radial-gradient(circle at 88% 92%, rgba(185,101,58,.10), transparent 30rem),
+              radial-gradient(circle at 9% 9%, rgba(240,195,168,.20), transparent 17rem),
+              radial-gradient(circle at 90% 88%, rgba(200,109,63,.11), transparent 24rem),
               linear-gradient(180deg,var(--paper2),var(--paper));
             color:var(--ink);
         }
@@ -53,30 +53,53 @@ def inject_css():
         #MainMenu, footer{visibility:hidden;}
 
         .block-container{
-            max-width:780px;
-            padding-top:1.5rem;
-            padding-bottom:4rem;
+            max-width:760px;
+            padding-top:1.3rem;
+            padding-bottom:3.2rem;
         }
 
         .av-hero{
             text-align:center;
-            padding:1.2rem .8rem .6rem;
+            padding:1.0rem .8rem .4rem;
         }
 
-        .av-eyebrow{
-            font-size:.68rem;
-            letter-spacing:.34em;
-            text-transform:uppercase;
+        .av-date-wrap{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            margin-bottom:1.15rem;
+        }
+
+        .av-date{
+            display:inline-flex;
+            align-items:center;
+            justify-content:center;
+            gap:.55rem;
+            font-family:"Montserrat",Arial,sans-serif !important;
+            font-size:.70rem !important;
+            letter-spacing:.30em !important;
+            color:var(--accent) !important;
+            border:1px solid rgba(200,109,63,.30);
+            border-radius:999px;
+            padding:.52rem .95rem .52rem 1.15rem;
+            background:rgba(255,255,255,.55);
+            white-space:nowrap;
+        }
+
+        .av-date::before,
+        .av-date::after{
+            content:"✦";
+            font-size:.62rem;
+            letter-spacing:0;
             color:var(--accent);
-            margin-bottom:1.5rem;
         }
 
         .av-names{
             font-family:"Cormorant Garamond","Baskerville","Times New Roman",serif !important;
-            font-size:clamp(3.2rem,9.5vw,5.5rem) !important;
-            line-height:.93 !important;
+            font-size:clamp(2.55rem,7.2vw,4.45rem) !important;
+            line-height:.98 !important;
             font-weight:500 !important;
-            letter-spacing:-.035em !important;
+            letter-spacing:-.03em !important;
             text-align:center !important;
             color:var(--ink) !important;
             margin:0 auto !important;
@@ -86,54 +109,47 @@ def inject_css():
             display:inline-block;
             font-style:italic;
             color:var(--accent);
-            font-size:.58em;
-            padding:0 .10em;
-            transform:translateY(-.04em);
+            font-size:.60em;
+            padding:0 .08em;
+            transform:translateY(-.02em) rotate(-4deg);
         }
 
-        .av-subtitle{
-            font-family:"Cormorant Garamond","Baskerville","Times New Roman",serif !important;
-            font-size:clamp(1.45rem,4.3vw,1.95rem) !important;
-            line-height:1.15 !important;
-            font-style:italic !important;
-            color:var(--muted) !important;
-            margin-top:1.15rem !important;
-        }
-
-        .av-date{
+        .av-partyline{
             text-align:center;
-            font-size:.74rem;
-            letter-spacing:.16em;
-            text-transform:uppercase;
-            color:var(--muted);
-            margin-top:.7rem;
+            margin-top:.72rem;
+            color:var(--accent);
+            font-family:"Cormorant Garamond","Baskerville","Times New Roman",serif !important;
+            font-style:italic;
+            font-size:1.15rem;
+            letter-spacing:.03em;
         }
 
         .av-rule{
-            width:72%;
+            width:68%;
             height:1px;
-            background:linear-gradient(90deg,transparent,var(--accent-soft),transparent);
-            margin:1.6rem auto 2rem;
+            background:linear-gradient(90deg,transparent,var(--accent2),transparent);
+            margin:1.4rem auto 1.6rem;
         }
 
         .av-copy{
             text-align:center;
             color:var(--muted);
-            font-size:.94rem;
-            line-height:1.65;
-            margin-bottom:1.15rem;
+            font-size:.95rem;
+            line-height:1.6;
+            margin-bottom:1.05rem;
         }
 
         [data-testid="stFileUploader"]{
-            background:rgba(255,255,255,.58);
+            background:rgba(255,255,255,.60);
             border:1px solid var(--line);
             border-radius:24px;
             padding:.4rem;
+            box-shadow:0 10px 30px rgba(87,57,40,.03);
         }
 
         [data-testid="stFileUploaderDropzone"]{
-            background:rgba(255,255,255,.28);
-            border:1px dashed rgba(185,101,58,.30);
+            background:rgba(255,255,255,.32);
+            border:1px dashed rgba(200,109,63,.34);
             border-radius:20px;
             min-height:145px;
         }
@@ -145,28 +161,30 @@ def inject_css():
             border:1px solid var(--accent);
             background:var(--accent);
             color:#fff;
+            font-family:"Montserrat",Arial,sans-serif !important;
             font-size:.82rem;
             font-weight:600;
-            letter-spacing:.12em;
+            letter-spacing:.13em;
             text-transform:uppercase;
         }
 
         div.stButton > button:hover{
-            background:transparent;
-            color:var(--accent);
-            border-color:var(--accent);
+            background:#b95e34;
+            color:#fff;
+            border-color:#b95e34;
         }
 
         div[data-testid="stLinkButton"] > a {
             width:100%;
-            min-height:3.35rem;
+            min-height:3.4rem;
             border-radius:999px !important;
             border:1px solid var(--accent) !important;
             background:transparent !important;
             color:var(--accent) !important;
-            font-size:.78rem !important;
+            font-family:"Montserrat",Arial,sans-serif !important;
+            font-size:.80rem !important;
             font-weight:600 !important;
-            letter-spacing:.1em !important;
+            letter-spacing:.10em !important;
             text-transform:uppercase !important;
             display:flex !important;
             align-items:center !important;
@@ -174,26 +192,31 @@ def inject_css():
             text-decoration:none !important;
         }
 
+        div[data-testid="stLinkButton"] > a:hover {
+            background:var(--accent) !important;
+            color:#fff !important;
+        }
+
         .av-large-title{
             text-align:center;
             font-family:"Cormorant Garamond","Baskerville","Times New Roman",serif !important;
-            font-size:1.5rem !important;
+            font-size:1.55rem !important;
             font-style:italic;
             color:var(--ink);
-            margin-top:1.65rem;
-            margin-bottom:.2rem;
+            margin-top:1.6rem;
+            margin-bottom:.18rem;
         }
 
         .av-large-copy{
             text-align:center;
             color:var(--muted);
-            font-size:.8rem;
+            font-size:.80rem;
             line-height:1.55;
             margin-bottom:.7rem;
         }
 
         .av-summary{
-            background:rgba(255,255,255,.48);
+            background:rgba(255,255,255,.52);
             border:1px solid var(--line);
             border-radius:18px;
             padding:.9rem 1rem;
@@ -202,40 +225,36 @@ def inject_css():
 
         .av-thanks{
             text-align:center;
-            padding:2rem 1.3rem;
+            padding:1.8rem 1.3rem;
             border:1px solid var(--line);
             border-radius:24px;
-            background:rgba(255,255,255,.52);
+            background:rgba(255,255,255,.56);
             margin-top:1rem;
         }
 
         .av-thanks-title{
             font-family:"Cormorant Garamond","Baskerville","Times New Roman",serif !important;
-            font-size:2.4rem !important;
+            font-size:2.25rem !important;
             font-weight:500 !important;
             color:var(--accent);
-            margin-bottom:.25rem;
-        }
-
-        .av-privacy{
-            text-align:center;
-            font-size:.76rem;
-            color:var(--muted);
-            line-height:1.55;
-            margin-top:1.2rem;
+            margin-bottom:.2rem;
         }
 
         @media(max-width:640px){
-            .block-container{padding:1rem .9rem 3rem;}
+            .block-container{padding:1rem .9rem 2.5rem;}
             .av-names{
-                font-size:clamp(2.65rem,12.7vw,4.35rem) !important;
-                line-height:.95 !important;
+                font-size:clamp(2.3rem,10.7vw,3.65rem) !important;
+                line-height:.98 !important;
             }
             .av-amp{
                 display:block;
                 padding:0;
                 margin:.03em 0;
-                font-size:.50em !important;
+                font-size:.52em !important;
+            }
+            .av-date{
+                font-size:.64rem !important;
+                letter-spacing:.23em !important;
             }
         }
         </style>
@@ -324,15 +343,15 @@ def main():
     st.markdown(
         """
         <div class="av-hero">
-            <div class="av-eyebrow">18 · 09 · 2026</div>
+            <div class="av-date-wrap">
+                <div class="av-date">18 · 09 · 2026</div>
+            </div>
             <div class="av-names">Αλέξης <span class="av-amp">&amp;</span> Βασιλίνα</div>
-            <div class="av-subtitle">Μοιράσου τις στιγμές μαζί μας</div>
-            <div class="av-date">Παρασκευή · Πάτρα</div>
+            <div class="av-partyline">one night, lots of memories ✦</div>
         </div>
         <div class="av-rule"></div>
         <div class="av-copy">
-            Ανέβασε τις φωτογραφίες και τα βίντεο που τράβηξες σήμερα.<br>
-            Μπορείς να επιλέξεις πολλά αρχεία μαζί.
+            Ανέβασε τις φωτογραφίες και τα βίντεο που τράβηξες σήμερα.
         </div>
         """,
         unsafe_allow_html=True,
@@ -356,7 +375,7 @@ def main():
         if large:
             st.info("Έχεις επιλέξει μεγάλο βίντεο — κράτησε τη σελίδα ανοιχτή μέχρι να ολοκληρωθεί το upload.")
 
-    if st.button("Μοίρασε τις στιγμές", disabled=not uploads, use_container_width=True):
+    if st.button("ΠΑΤΑ ΕΔΩ", disabled=not uploads, use_container_width=True):
         try:
             dbx = get_dropbox_client()
             progress = st.progress(0, text="Ετοιμάζουμε τα αρχεία…")
@@ -390,13 +409,13 @@ def main():
                 st.markdown(
                     """
                     <div class="av-thanks">
-                        <div class="av-thanks-title">Ευχαριστούμε 🧡</div>
-                        <div>Οι στιγμές σου μόλις έγιναν μέρος της δικής μας βραδιάς.</div>
+                        <div class="av-thanks-title">Τέλειο! 🧡</div>
+                        <div>Τα αρχεία ανέβηκαν.</div>
                     </div>
                     """,
                     unsafe_allow_html=True,
                 )
-                st.success("Όλα τα αρχεία ανέβηκαν με επιτυχία.")
+                st.success("Όλα ανέβηκαν με επιτυχία.")
 
         except Exception as exc:
             st.error("Δεν μπορέσαμε να συνδεθούμε με το album αυτή τη στιγμή. Δοκίμασε ξανά.")
@@ -407,26 +426,16 @@ def main():
         """
         <div class="av-large-title">Έχεις πολύ μεγάλο βίντεο;</div>
         <div class="av-large-copy">
-            Για βίντεο πάνω από 1 GB, χρησιμοποίησε την επιλογή παρακάτω.
+            Για βίντεο πάνω από 1 GB.
         </div>
         """,
         unsafe_allow_html=True,
     )
 
     st.link_button(
-        "Ανέβασε μεγάλο βίντεο",
+        "ΑΝΕΒΑΣΕ ΤΟ ΒΙΝΤΕΟ",
         LARGE_VIDEO_URL,
         use_container_width=True,
-    )
-
-    st.markdown(
-        """
-        <div class="av-privacy">
-            Τα αρχεία ανεβαίνουν στον ιδιωτικό φάκελο του γάμου.<br>
-            Οι υπόλοιποι καλεσμένοι δεν μπορούν να δουν τι ανεβάζεις.
-        </div>
-        """,
-        unsafe_allow_html=True,
     )
 
 if __name__ == "__main__":
