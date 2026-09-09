@@ -96,7 +96,7 @@ def inject_css():
 
         .av-names{
             font-family:"GFS Didot","Noto Serif","Times New Roman",serif !important;
-            font-size:clamp(2.4rem,6.8vw,4.1rem) !important;
+            font-size:clamp(2.15rem,5.8vw,3.35rem) !important;
             line-height:.98 !important;
             font-weight:500 !important;
             letter-spacing:-.015em !important;
@@ -243,14 +243,14 @@ def inject_css():
         @media(max-width:640px){
             .block-container{padding:1rem .9rem 2.5rem;}
             .av-names{
-                font-size:clamp(2.15rem,10vw,3.4rem) !important;
+                font-size:clamp(1.9rem,8.7vw,2.55rem) !important;
                 line-height:.98 !important;
             }
             .av-amp{
-                display:block;
-                padding:0;
-                margin:.03em 0;
-                font-size:.52em !important;
+                display:inline-block;
+                padding:0 .08em;
+                margin:0;
+                font-size:.60em !important;
             }
             .av-date{
                 font-size:.64rem !important;
@@ -347,7 +347,7 @@ def main():
                 <div class="av-date">18 · 09 · 2026</div>
             </div>
             <div class="av-names">Αλέξης <span class="av-amp">&amp;</span> Βασιλίνα</div>
-            <div class="av-partyline">one night, lots of memories ✦</div>
+            <div class="av-partyline">✦ one night, lots of memories ✦</div>
         </div>
         <div class="av-rule"></div>
         <div class="av-copy">
