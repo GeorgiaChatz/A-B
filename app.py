@@ -481,27 +481,21 @@ def main():
             ):
                 st.code(str(exc))
 
-    st.markdown(
+        st.markdown(
         f"""
-        <div class="av-large">
-            <div class="av-large-title">
-                Έχεις πολύ μεγάλο βίντεο;
-            </div>
-
-            <div class="av-large-copy">
-                Για βίντεο πάνω από 1 GB.
-            </div>
-
-            <a
-                class="av-video-button"
-                href="{LARGE_VIDEO_URL}"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                ΑΝΕΒΑΣΕ ΤΟ ΒΙΝΤΕΟ
-            </a>
-        </div>
-        """,
+<div class="av-large">
+    <div class="av-large-title">
+        Έχεις πολύ μεγάλο βίντεο;
+    </div>
+    <div class="av-large-copy">
+        Για βίντεο πάνω από 1 GB.
+    </div>
+    <a class="av-video-button"
+       href="{LARGE_VIDEO_URL}"
+       target="_blank"
+       rel="noopener noreferrer">ΑΝΕΒΑΣΕ ΤΟ ΒΙΝΤΕΟ</a>
+</div>
+""",
         unsafe_allow_html=True,
     )
 
